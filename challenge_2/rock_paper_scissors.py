@@ -8,6 +8,7 @@ class Rps:
         self.message = "You picked {} and the computer picked {}. You {}!"
 
     def get_input(self):
+        """Collects the users input."""
         uinput = input("Choose {} {} or {}. Type {} to quit: \n".format(self.choices[0], self.choices[1], self.choices[2], self.quit))
         if uinput == self.quit:
             return self.quit
@@ -17,6 +18,11 @@ class Rps:
         return uinput
 
     def player_won(self, player_choice, comp_choice):
+        """
+        :param player_choice: User's input as a string.
+        :param comp_choice: Computers choice as a string.
+        :return: Integer representing who won.
+        """
         win_dict = {"rock": "scissors", "paper": "rock", "scissors": "paper"}
         if win_dict[player_choice] == comp_choice:
             return 0
@@ -25,6 +31,7 @@ class Rps:
         return 2
 
     def start_game(self):
+        """ Call this method to start the game."""
         while True:
             player_choice = self.get_input()
             if player_choice == self.quit:
