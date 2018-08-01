@@ -33,12 +33,7 @@ class Rps:
                 continue
             comp_choice = self.choices[random.randint(0, 2)]
             result = self.player_won(player_choice, comp_choice)
-            if result == 0:
-                print(self.message.format(player_choice, comp_choice, "won"))
-            elif result == 1:
-                print(self.message.format(player_choice, comp_choice, "lost"))
-            else:
-                print(self.message.format(player_choice, comp_choice, "tied"))
+            print(self.message.format(player_choice, comp_choice, {0: "won", 1: "lost", 2: "tied"}[result]))
 
 
 game = Rps()
