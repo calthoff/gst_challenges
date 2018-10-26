@@ -3,6 +3,7 @@ import string
 
 
 def generate_function():
+    """ Returns a secure password."""
     password = ''
     for i in range(random.randint(3, 5)):
             password += random.choice(string.punctuation)
